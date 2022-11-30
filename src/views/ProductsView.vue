@@ -2,6 +2,7 @@
 import { computed, onBeforeMount, ref } from 'vue'
 import { useProductsStore } from '@/stores/products.js'
 import { useCartStore } from '@/stores/cart'
+import ProductItem from '@/components/products/ProductItem.vue'
 
 const productsStore = useProductsStore()
 const cartStore = useCartStore()
@@ -37,10 +38,18 @@ const addProduct = (productId) => {
 <template>
   <div id="home">
     <div class="content" :class="loadingClass">
-      <div v-if="loading" class="lds-dual-ring"></div>
+      <div v-if="loading" class="lds-dual-ring"/>
       <!--      LOADING SACADO DE https://loading.io/css/-->
       <div class="content__products" v-else v-for="product in productsStore.products" :key="product.id">
-        {{product.title}} {{product.price}}
+        <ProductItem
+            :id="product.id"
+            :image="product.image"
+            :noImage="productsStore.noImageSrc"
+            :title="product.title"
+            :description="product.description"
+            :price="product.price"
+            @addProduct="addProduct"
+        />
       </div>
     </div>
   </div>
