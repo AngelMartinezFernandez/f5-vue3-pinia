@@ -5,34 +5,12 @@
     </div>
     <div class="sidebar-nav">
       <router-link to="/" class="nav-button text">Products</router-link>
-      <router-link to="/about" class="nav-button text">About</router-link>
+      <router-link to="/cart" class="nav-button text">Cart</router-link>
     </div>
-<!--    <div @click="toggleModal" class="sidebar-footer text">-->
-<!--      <span>Cart</span>-->
-<!--      <Modal-->
-<!--          v-model="showCartModal"-->
-<!--          :title="'Cart'"-->
-<!--      >-->
-<!--        <p>{{handledTotal}}</p>-->
-<!--      </Modal>-->
-<!--    </div>-->
   </div>
 </template>
 
 <script setup>
-
-// // DATA
-// const showModal = ref( false )
-// const cartStore = useCartStore()
-
-// // COMPUTED
-// const handledTotal = computed( () => {
-//   return `Total: ${cartStore.getTotal .toFixed(2)}`
-// } )
-// METHODS
-// const toggleModal = () => {
-//   showModal.value = !showModal.value
-// }
 </script>
 
 <style scoped>
@@ -59,16 +37,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-
-.sidebar-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  cursor:pointer;
-  color: whitesmoke;
-  border-top: 2px solid white;
 }
 
 .nav-button {

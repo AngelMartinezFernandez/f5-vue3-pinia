@@ -1,0 +1,28 @@
+.DS_Store
+node_modules
+/dist
+/admin
+
+# local env files
+.env.local
+.env.*.local
+# Master build with .env in version control could be troublesome.
+.env
+.env.production
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+coverage
+/package-lock.json
+.gitignore
+jsconfig.json
