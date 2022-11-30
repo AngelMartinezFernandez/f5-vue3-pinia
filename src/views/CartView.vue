@@ -1,5 +1,6 @@
 <script setup>
 import { useCartStore } from '@/stores/cart'
+import CartItem from '@/components/cart/CartItem.vue'
 
 // STORE
 const cartStore = useCartStore()
@@ -11,16 +12,22 @@ const deleteProduct = (itemId) => {
 </script>
 <template>
     <div class="content">
-      <div v-for="item of cartStore.shoppingCart" :key="item.id" class="cart-item-container">
-        {{item.title}} {{item.price}}
+      <h1 v-if="cartStore.shoppingCart.length === 0">No hay elementos en el carrito</h1>
+      <div v-else v-for="item of cartStore.shoppingCart" :key="item.id" class="cart-item-container">
+        <CartItem
+            :id="item.id"
+            :title="item.title"
+            :price="item.price"
+            @delete-item="deleteProduct"
+        />
       </div>
     </div>
 </template>
 <style scoped>
 .content {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 p {
