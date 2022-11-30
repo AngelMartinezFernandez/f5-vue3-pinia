@@ -36,7 +36,6 @@ const addProduct = (productId) => {
 </script>
 
 <template>
-  <div id="home">
     <div class="content" :class="loadingClass">
       <div v-if="loading" class="lds-dual-ring"/>
       <!--      LOADING SACADO DE https://loading.io/css/-->
@@ -52,15 +51,9 @@ const addProduct = (productId) => {
         />
       </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
-#home {
-  height: 100vh;
-  overflow-y: auto;
-}
-
 .content {
   display: flex;
   flex-direction: column;
