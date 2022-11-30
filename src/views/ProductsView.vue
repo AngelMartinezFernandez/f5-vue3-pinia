@@ -58,6 +58,8 @@ const addProduct = (productId) => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5vh 0;
+  overflow-y: auto;
 }
 
 .content__products {

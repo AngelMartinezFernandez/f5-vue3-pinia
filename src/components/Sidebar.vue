@@ -7,10 +7,22 @@
       <router-link to="/" class="nav-button text">Products</router-link>
       <router-link to="/cart" class="nav-button text">Cart</router-link>
     </div>
+    <div class="sidebar-footer text total">
+      {{ total }}
+    </div>
   </div>
 </template>
 
 <script setup>
+import { useCartStore } from '@/stores/cart'
+import { computed } from 'vue'
+
+const cartStore = useCartStore()
+
+// COMPUTED
+const total = computed(() => {
+  return `Total: ${cartStore.getTotal} €`
+})
 </script>
 
 <style scoped>
@@ -31,6 +43,18 @@
   text-transform: uppercase;
   color: whitesmoke;
   border-bottom: 2px solid white;
+}
+
+.sidebar-footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 20%;
+  color: whitesmoke;
+  border-top: 2px solid white;
 }
 
 .sidebar-nav {
@@ -65,5 +89,9 @@
   letter-spacing: 1.1rem;
   text-transform: uppercase;
   color: var(--secondary-color);
+}
+
+.total {
+  letter-spacing: 0.5rem;
 }
 </style>

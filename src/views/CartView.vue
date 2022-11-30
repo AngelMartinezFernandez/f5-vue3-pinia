@@ -29,6 +29,8 @@ const deleteProduct = (itemId) => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 5vh 0;
+  overflow-y: auto;
 }
 p {
   margin: 0 10px
